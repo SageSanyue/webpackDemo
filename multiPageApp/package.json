@@ -5,7 +5,8 @@
   "main": "webpack.simple.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:simple": "webpack --config webpack.simple.js"
+    "build:simple": "webpack --config webpack.simple.js",
+    "build:globby": "webpack --config webpack.auto.js"
   },
   "author": "Sage",
   "license": "ISC",
@@ -14,6 +15,7 @@
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "babel-loader": "^8.1.0",
+    "globby": "^11.0.0",
     "html-webpack-plugin": "^4.0.2",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
