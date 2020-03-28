@@ -1,3 +1,9 @@
 .bg-img {
     background: url(~@assets/img/small.png) no-repeat;
 }
+.smile {
+    width: 100px;
+    height: 82px;
+    background: url(~@assets/smile.svg);
+    background-size: 100px 82px;
+}
