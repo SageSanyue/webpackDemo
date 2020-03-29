@@ -9,6 +9,7 @@ module.exports = {
     },
     output: {
         filename: '[name].[chunkHash:8].js', // 打包代码时，加上 hash 戳
+        chunkFilename: '[name].[chunkHash:8].js', // 指定分离出来的代码文件的名称
         path: path.resolve(__dirname, 'dist')
         // publicPath: 'http://cdn.abc.com'  // 修改所有静态文件 url 的前缀（如 cdn 域名），这里暂时用不到
     },
