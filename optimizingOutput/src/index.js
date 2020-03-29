@@ -9,4 +9,12 @@ console.log('index.js')
 import(/* webpackChunkName: "lodash" */ 'lodash').then((_) => { 
     console.log(_.last([1, 2, 3])) // 打印 3
 })
-  
+
+// ignorePlugin可以处理多余库
+import moment from 'moment'
+import 'moment/locale/zh-cn' // 手动引入中文语言包
+moment.locale('zh-cn')
+console.log('locale', moment.locale())
+console.log('data', moment().format('ll')) // 2020年xx月xx日
+var ele = document.querySelector('.c')
+ele.innerHTML = moment().format('ll')

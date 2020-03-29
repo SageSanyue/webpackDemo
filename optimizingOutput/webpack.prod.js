@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const webpack = require('webpack')
 
 module.exports = {
     mode: 'production',
@@ -49,6 +50,8 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/index.html',
             filename: 'index.html'
-        })
+        }),
+        new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+        // 配置的参数第一个是匹配引入模块路径的正则表达式，第二个是匹配模块的对应上下文即所在目录名。
     ]
 }
