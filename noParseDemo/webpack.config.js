@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
     mode: 'production',
@@ -12,7 +13,7 @@ module.exports = {
         path: path.resolve(__dirname, 'output')
     },
     module: {
-        // noParse: /node_modules\/(jquey\.js)/,
+        noParse: /node_modules\/(jquey\.js)/,
         rules: [
             {
                 test: /\.js$/,
@@ -22,6 +23,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new BundleAnalyzerPlugin(),
         new HtmlWebpackPlugin({
             template: './src/index.html',
             filename: 'index.html'
