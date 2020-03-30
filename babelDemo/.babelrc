@@ -1,3 +1,10 @@
 {
-    "presets": ["@babel/preset-env"]
+    "presets": [
+        [
+            "@babel/preset-env", 
+            {
+            "useBuiltIns": "usage" // 按需加载:usage 表示明确使用到的 Polyfill 引用。在一些 ES2015+ 语法不支持的环境下，每个需要用到 Polyfill 的引用时，会自动加上
+            }
+        ]
+    ]
 }
