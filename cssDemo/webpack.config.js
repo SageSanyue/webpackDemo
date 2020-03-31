@@ -20,6 +20,15 @@ module.exports = {
                         options: {
                             modules: true
                         }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {           // 如果没有options这个选项将会报错 No PostCSS Config found
+                            plugins: (loader) => [
+                                require('autoprefixer')(), //CSS浏览器兼容
+                                require('cssnano')()  //压缩css
+                            ]
+                        }
                     }
                 ]
             },
