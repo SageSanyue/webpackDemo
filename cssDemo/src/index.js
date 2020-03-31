@@ -1,4 +1,7 @@
 import styles from './css/app.css';
+import './css/a.scss';
+import './css/b.sass';
+import './css/c.less';
 
 document.write('My Webpack app.<br/>');
 

@@ -22,6 +22,43 @@ module.exports = {
                         }
                     }
                 ]
+            },
+            // 普通的 `.scss` 文件和 `*.vue` 文件中的
+            // `<style lang="scss">` 块都应用它
+            {
+                test: /\.scss$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'sass-loader'
+                ]
+            },
+            {
+                test: /\.sass$/,
+                use: [
+                  MiniCssExtractPlugin.loader,
+                  'css-loader',
+                  {
+                    loader: 'sass-loader',
+                    options: {
+                        // Prefer `dart-sass`
+                        implementation: require('sass'),
+                    },
+                  }
+                ]
+            },
+            {
+                test: /\.less$/,
+                use: [
+                    MiniCssExtractPlugin.loader, 
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true
+                        }
+                    },
+                    'less-loader'
+                ]
             }
         ]
     },
